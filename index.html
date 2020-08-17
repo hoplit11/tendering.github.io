@@ -9,13 +9,14 @@
 
     <!-- Bootstrap CSS  include ( css classes from Bootstrap) -->
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/styles.css">
     <title>Ristorante Con Fusion</title>
 </head>
 
 <body>
     <!--Encabezado -->
     <header class="jumbotron">
-        <div class="container">
+        <div class="container ">
             <div class="row">
                 <div class="col-12 col-sm-6"> <!--col-12: Para xsm ocuparan toda la fila(12columnas) y para tamaños > a sm, ocupara 6 columnas (media pantalla) -->
                     <h1>Ristorante con Fusion</h1>
@@ -29,7 +30,7 @@
 
     <!--Cuerpo-->
     <div class="container" >
-        <div class="row">
+        <div class="row row-content align-items-center "> <!--Contenedor marcador(class) row(fila) para el css de bootstrap , class row-content para el css de styles.css, class align-items-center: alinea el contenido verticalmente en la fila(row)  -->
             <div class=" col-12 col-sm-4 order-sm-last col-md-3"> <!--col-12: Para xsm ocupa la fila entera),para tamaños > a sm, ocupara 4 colum y se situa a la derecha(last),para tamaños > a md, ocupara 3 columnas  -->
                 <h3>Our Lipsmacking Culinary Creations</h3>
             </div>
@@ -39,7 +40,7 @@
             </div>
         </div>
 
-        <div class="row">
+        <div class="row row-content align-items-center" >
             <div class=" col-12 col-sm-4 col-md-3">
                 <h3>This Month's Promotions</h3>
             </div>
@@ -49,7 +50,7 @@
             </div>
         </div>
 
-        <div  class="row">
+        <div  class="row row-content align-items-center">
             <div class=" col-12 col-sm-4 order-sm-last col-md-3">
                 <h3>Meet our Culinary Specialists</h3>
             </div>
@@ -64,16 +65,18 @@
     <!--Pie de pagina -->
     <footer >
         <div class="container">
-           <div class="row">
+           <div class="row row-footer">
+                 <!--links pagina -->
                 <div class="col-4 offset-1 col-sm-2">   <!--col-4:para xsm ocupa 4 col,  offset-1: se movera a la derecha 1 col,  col-sm-2:para sm ocupa 4 col   -->
                     <h5>Links</h5>
-                    <ul>
+                    <ul class="list-unstyled"><!--list-unstyled:Elimina las viñetas de ul -->
                         <li><a href="#">Home</a></li>
                         <li><a href="#">About</a></li>
                         <li><a href="#">Menu</a></li>
                         <li><a href="#">Contact</a></li>
                     </ul>
                 </div>
+                <!--links Dirección-->
                 <div class="col-7 col-sm-5">
                     <h5>Our Address</h5>
                     <address>
@@ -85,20 +88,20 @@
 		              Email: <a href="mailto:confusion@food.net">confusion@food.net</a>
 		                </address>
                 </div>
-                <div class="col-12 col-sm-4"> <!--col-12: Para xsm ocuparan toda la fila(12columnas) y para tamaños > a sm, ocupara 4 columnas -->
-                   <div>
-                       <div>
-                           <a href="http://google.com/+">Google+</a>
-                           <a href="http://www.facebook.com/profile.php?id=">Facebook</a>
-                           <a href="http://www.linkedin.com/in/">LinkedIn</a>
-                           <a href="http://twitter.com/">Twitter</a>
-                           <a href="http://youtube.com/">YouTube</a>
-                           <a href="mailto:">Mail</a>
-                       </div>
+                <!--links redes-->
+                <div class="col-12 col-sm-4 align-self-center"> <!--col-12: Para xsm ocuparan toda la fila(12columnas) y para tamaños > a sm, ocupara 4 columnas -->
+                   <div class="text-center"> <!--Centra el los links en la pantalla -->
+                        <a href="http://google.com/+">Google+</a>
+                        <a href="http://www.facebook.com/profile.php?id=">Facebook</a>
+                        <a href="http://www.linkedin.com/in/">LinkedIn</a>
+                        <a href="http://twitter.com/">Twitter</a>
+                        <a href="http://youtube.com/">YouTube</a>
+                        <a href="mailto:">Mail</a>
                    </div>
                 </div>
-                <div class="row">
-                    <div class="col-auto"><!-- col-auto: Ocupara las colunas necesaria deacuerdo al contenido -->
+                <!--Copyright justify-content-center-->
+                <div class="row justify-content-center"> <!-- row: clase para bootstrap, justify-content-center: justfica(posiciona la columba en centro) el contenido en el centro de la fila -->
+                    <div class="col-auto"> <!-- col-auto: Ocupara las col necesaria deacuerdo al contenido -->
                         <p>© Copyright 2018 Ristorante Con Fusion</p>
                     </div>
                 </div>
