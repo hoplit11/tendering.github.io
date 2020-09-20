@@ -14,6 +14,24 @@
 </head>
 
 <body>
+    <!--Barra de navegacion -->
+    <nav class="navbar navbar-dark navbar-expand-sm fixed-top">
+      <div class="container">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#Navbar"><!--Barra de navegacion que colapsa en pantallas pequeñas(sm), el data-target="#Navbar" vincula -->
+           <span class="navbar-toggler-icon"></span><!--Incluir el icono toggl de tres lines tipuco en paginas sm-->
+        </button>
+      <a class="navbar-brand mr-auto" href="#">Ristorante Con Fusion</a><!--mr-auto:margin auto :aumenta la margen derecha para correr el nombre a la derecha -->
+       <div class="collapse navbar-collapse" id="Navbar"> <!--correlaciona esta clase y el id con data-toggle="collapse" data-target="#Navbar para que se ejecute dentro del button cuando el displea se sm-->
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active"><a class="nav-link" href="#">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="./aboutus.html">About</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Menu</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+          </ul>
+       </div>
+      </div>
+    </nav>
+
     <!--Encabezado -->
     <header class="jumbotron">
         <div class="container ">
@@ -71,7 +89,7 @@
                     <h5>Links</h5>
                     <ul class="list-unstyled"><!--list-unstyled:Elimina las viñetas de ul -->
                         <li><a href="#">Home</a></li>
-                        <li><a href="#">About</a></li>
+                        <li><a href="./aboutus.html">About</a></li>
                         <li><a href="#">Menu</a></li>
                         <li><a href="#">Contact</a></li>
                     </ul>
