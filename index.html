@@ -25,7 +25,7 @@
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#Navbar"><!--Barra de navegacion que colapsa en pantallas pequeñas(sm), el data-target="#Navbar" vincula -->
            <span class="navbar-toggler-icon"></span><!--Incluir el icono toggl de tres lines tipuco en paginas sm-->
         </button>
-      <a class="navbar-brand mr-auto" href="#">Ristorante Con Fusion</a><!--mr-auto:margin auto :aumenta la margen derecha para correr el nombre a la derecha -->
+      <a class="navbar-brand mr-auto" href="./index.html"><img src="img/logo.png" height="30" width="41"></a><!--mr-auto:margin auto :aumenta la margen derecha para correr el nombre a la derecha -->
        <div class="collapse navbar-collapse" id="Navbar"> <!--correlaciona esta clase y el id con data-toggle="collapse" data-target="#Navbar para que se ejecute dentro del button cuando el displea se sm-->
           <ul class="navbar-nav mr-auto">
             <li class="nav-item active"><a class="nav-link" href="#"><span class="fa fa-home fa-lg"></span> Home</a></li>
@@ -45,7 +45,8 @@
                     <h1>Ristorante con Fusion</h1>
                     <p>We take inspiration from the World's best cuisines, and create a unique fusion experience. Our lipsmacking creations will tickle your culinary senses!</p>
                 </div>
-                <div class="col-12 col-sm"><!--col-12: Para xsm ocuparan toda la fila(12columnas) por lo tanto se apilara y para tamaños > a sm, ocupara el sobrante de 6 columnas -->
+                <div class="col-12 col-sm align-self-center"><!--col-12: Para xsm ocuparan toda la fila(12columnas) por lo tanto se apilara y para tamaños > a sm, ocupara el sobrante de 6 columnas -->
+                     <img src="img/logo.png" class="img-fluid">
                 </div>
             </div>
         </div>
@@ -53,16 +54,26 @@
 
     <!--Cuerpo-->
     <div class="container" >
+        <!--Uthappizza-->
         <div class="row row-content align-items-center "> <!--Contenedor marcador(class) row(fila) para el css de bootstrap , class row-content para el css de styles.css, class align-items-center: alinea el contenido verticalmente en la fila(row)  -->
             <div class="col-12 col-sm-4 order-sm-last col-md-3"> <!--col-12: Para xsm ocupa la fila entera),para tamaños > a sm, ocupara 4 colum y se situa a la derecha(last),para tamaños > a md, ocupara 3 columnas  -->
                 <h3>Our Lipsmacking Culinary Creations</h3>
             </div>
+
             <div class=" col-12 col-sm order-sm-first col-md"><!-- col: Para xsm se apilara debajo del contenido anterior, para > sm ocupara el sobrante de columnas y y se situa a la izquierda(First), para tamaños > a md, el sobrante de columnas  -->
-                <h2>Uthappizza</h2>
-                <p>A unique combination of Indian Uthappam (pancake) and Italian pizza, topped with Cerignola olives, ripe vine cherry tomatoes, Vidalia onion, Guntur chillies and Buffalo Paneer.</p>
+              <div class="media">
+                    <img class="d-flex mr-3 img-thumbnail align-self-center" src="img/uthappizza.png" alt="Uthappizza">
+                    <div class="media-body">
+                         <h2 class="mt-0">Uthappizza</h2>
+                             <p class="d-none d-sm-block">A unique combination of Indian Uthappam (pancake) and
+                                Italian pizza, topped with Cerignola olives, ripe vine
+                                cherry tomatoes, Vidalia onion, Guntur chillies and
+                                Buffalo Paneer.</p>
+                     </div>
+              </div>
             </div>
         </div>
-
+        <!--Weekend Grand Buffet-->
         <div class="row row-content align-items-center" >
             <div class=" col-12 col-sm-4 col-md-3">
                 <h3>This Month's Promotions</h3>
@@ -72,15 +83,25 @@
                 <p>Featuring mouthwatering combinations with a choice of five different salads, six enticing appetizers, six main entrees and five choicest desserts. Free flowing bubbly and soft drinks. All for just $19.99 per person </p>
             </div>
         </div>
-
+        <!--Alberto Somayya-->
         <div  class="row row-content align-items-center">
             <div class=" col-12 col-sm-4 order-sm-last col-md-3">
                 <h3>Meet our Culinary Specialists</h3>
             </div>
+
             <div  class=" col-12 col-sm order-sm-first col-md">
-                <h2>Alberto Somayya</h2>
-                <h4>Executive Chef</h4>
-                <p>Award winning three-star Michelin chef with wide International experience having worked closely with whos-who in the culinary world, he specializes in creating mouthwatering Indo-Italian fusion experiences. </p>
+              <div class="media">
+                <img class="d-flex mr-3 img-thumbnail align-self-center" src="img/alberto.png" alt="Alberto Somayya">
+                <div class="media-body">
+                     <h2 class="mt-0">Alberto Somayya</h2>
+                     <h4>Executive Chef</h4>
+                     <p class="d-none d-sm-block">Award winning three-star Michelin chef with wide
+                       International experience having worked closely with
+                       whos-who in the culinary world, he specializes in
+                       creating mouthwatering Indo-Italian fusion experiences.
+                     </p>
+                </div>
+               </div>
             </div>
         </div>
     </div>
