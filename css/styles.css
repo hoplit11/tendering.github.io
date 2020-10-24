@@ -39,6 +39,13 @@ body {
   background-color: #512DA8;/*para que se aplique este color, se debe remover bg-primary del nav*/
 }
 
+.tab-content {
+    border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    padding: 10px;
+}
+
 /*
 .navbar-inverse {
     background: #303F9F;
