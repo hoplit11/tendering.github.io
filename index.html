@@ -272,6 +272,10 @@
           <a class="carousel-control-next" href="#mycarousel" role="button" data-slide="next">
             <span class="carousel-control-next-icon"></span>
            </a>
+          <div class="btn-group" id="carouselButton">
+            <button class="btn btn-danger btn-sm" id="carousel-pause" type="button" name="button"> <span class="fa fa-pause"></span> </button>
+            <button class="btn btn-danger btn-sm" id="carousel-play" type="button" name="button"> <span class="fa fa-play"></span> </button>
+          </div>
         </div>
       </div>
     </div>
@@ -403,9 +407,18 @@
   <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
   <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
   <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-
-  <script> </script>
-
+  <!---->
+  <script>
+   $(document).ready(function(){
+    $("#mycarousel").carousel( {interval: 2000 } );
+    $("#carousel-pause").click(function(){
+      $("#mycarousel").carousel('pause');
+    });
+    $("#carousel-play").click(function(){
+      $("#mycarousel").carousel("cycle");
+    });
+  });
+  </script>
 
   <!--tooltip needs to be activated by adding a small Javascript code to the bottom of the page after the line that imports the bootstrap.min.js file.-->
   <!--<script>
