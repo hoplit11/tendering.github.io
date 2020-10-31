@@ -1,5 +1,6 @@
 
 $lt-gray: #ddd;
+$header-color:floralwhite;
 $background-dark: #512DA8;
 $background-light: #9575CD;
 $background-pale: #D1C4E9;
@@ -75,4 +76,30 @@ body{
     position: absolute;
     bottom: 0px;
     z-index: 1;
+}
+
+.modal-header{
+	background: $background-dark;
+	color: $header-color;
+	.modal-title {
+		color: $header-color;
+	}
+	#closeLog {
+		color: $header-color;
+	}
+	#hideX {
+		color: $header-color;
+	}
+}
+
+.modal-body {
+	background: $background-pale;
+	.card {
+		background: $background-pale;
+	}
+}
+
+#ReserveTable {
+	color: $header-color;
+	font-weight: bold;
 }

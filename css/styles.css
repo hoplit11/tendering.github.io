@@ -52,3 +52,22 @@ body {
   position: absolute;
   bottom: 0px;
   z-index: 1; }
+
+.modal-header {
+  background: #512DA8;
+  color: floralwhite; }
+  .modal-header .modal-title {
+    color: floralwhite; }
+  .modal-header #closeLog {
+    color: floralwhite; }
+  .modal-header #hideX {
+    color: floralwhite; }
+
+.modal-body {
+  background: #D1C4E9; }
+  .modal-body .card {
+    background: #D1C4E9; }
+
+#ReserveTable {
+  color: floralwhite;
+  font-weight: bold; }

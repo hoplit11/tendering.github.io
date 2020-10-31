@@ -19,37 +19,8 @@
 </head>
 
 <body>
-  <!--Barra de navegacion -->
-  <nav class="navbar navbar-dark navbar-expand-sm fixed-top">
-    <div class="container">
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#Navbar">
-        <!--Barra de navegacion que colapsa en pantallas pequeñas(sm), el data-target="#Navbar" vincula -->
-        <span class="navbar-toggler-icon"></span>
-        <!--Incluir el icono toggl de tres lines tipuco en paginas sm-->
-      </button>
-      <a class="navbar-brand mr-auto" href="./index.html"><img src="img/logo.png" height="30" width="41"></a>
-      <!--mr-auto:margin auto :aumenta la margen derecha para correr el nombre a la derecha -->
-
-      <div class="collapse navbar-collapse" id="Navbar">
-        <!--correlaciona esta clase y el id con data-toggle="collapse" data-target="#Navbar para que se ejecute dentro del button cuando el displea se sm-->
-
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item active"><a class="nav-link" href="#"><span class="fa fa-home fa-lg"></span> Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="./aboutus.html"><span class="fa fa-info fa-lg"></span> About</a></li>
-          <li class="nav-item"><a class="nav-link" href="#"><span class="fa fa-list fa-lg"></span> Menu</a></li>
-          <li class="nav-item"><a class="nav-link" href="./contactus.html"><span class="fa fa-address-card fa-lg"></span> Contact</a></li>
-        </ul>
-        <!--Link trigger the shoin/hide model-->
-        <span class="navbar-text">
-          <a data-toggle="modal" data-target="#loginModal" href="#">
-            <span class="fa fa-sign-in"></span>Login</a>
-        </span>
-
-      </div>
-    </div>
-  </nav>
   <!--Modal of Login. Alwasy at the top of the page-->
-  <div id="loginModal" class="modal fade" role="dialog" tabindex="">
+  <div id="loginForm" class="modal fade" role="dialog" tabindex="">
     <!--class="modal fade": modal will fade under the screen role="dialogo":display on the top of the page-->
     <div class="modal-dialog modal-lg" role="content">
       <!--Modal Content-->
@@ -57,7 +28,7 @@
         <!--Modal header-->
         <div class="modal-header">
           <h4 class="modal-title">Login </h4>
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <button id="closeLog" type="button" class="close" >&times;</button>
           <!--for closing the button-->
         </div>
         <!--Modal body-->
@@ -85,7 +56,7 @@
             </div>
             <!--Cancel and Sing in Button-->
             <div class="form-row">
-              <button type="button" class="btn btn-secondary btn-sm ml-auto" data-dismiss="modal">Cancel</button>
+              <button id="closeLogcancel" type="button" class="btn btn-secondary btn-sm ml-auto" >Cancel</button>
               <button type="submit" class="btn btn-primary btn-sm ml-1">Sign in</button>
             </div>
           </form>
@@ -93,16 +64,18 @@
       </div>
     </div>
   </div>
-  <!--Reserve a Table- -reservation form-->
+  <!--Reserve a Table Modal- -reservation form-->
   <!--Task - 1 and 2-->
-  <div class="modal fade " id="form" role="dialog" tabindex="">
+  <div id="reserveForm" class="modal fade"  role="dialog" tabindex="">
     <div class="modal-dialog modal-lg" role="content">
       <div class="modal-content">
+
         <div class="modal-header">
           <h4 class="modal-title">Reserve a Table </h4> <!-- heading "Reserve a Table"-->
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <button id="hideX" type="button" class="close">&times;</button>
           <!--for closing the button-->
         </div>
+
         <div class="modal-body">
           <div class="card">
             <!--Division of the card-->
@@ -110,9 +83,9 @@
               <form class="" action="index.html" method="post">
                 <!--Number of Guests-->
                 <div class="form-group row">
-                  <label for="firstname" class="col-4 col-md-2 col-form-label">Number of Guests</label>
+                  <label for="firstname" class="col-4 col-md-3 col-form-label">Number of Guests</label>
                   <!--Radios- 1 to 6-->
-                  <div class="col-7 col-md-10">
+                  <div class="col-7 col-md-8">
                     <!--1-->
                     <div class="form-check form-check-inline">
                       <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
@@ -147,19 +120,19 @@
                 </div>
                 <!--Section--> <!--Task 2 -->
                 <div class="form-group row">
-                  <label for="section" class="col-3 col-md-2 col-form-label">Section</label>
-                  <div class="btn-group btn-group-toggle col-6 col-md-10 " data-toggle="buttons">
+                  <label for="section" class="col-4 col-md-3 col-form-label">Section</label>
+                  <div class="btn-group btn-group-toggle col-3 col-md-6 " data-toggle="buttons">
                      <label class="btn btn-success active">
-                         <input type="radio" name="options" id="NoSmoking" autocomplete="off" checked> Non-Smoking
+                         <input id="NoSmoking" type="radio" name="options" autocomplete="off" checked> Non-Smoking
                      </label> <!--The non-smoking button is checked by default.-->
                      <label class="btn btn-danger">
-                         <input type="radio" name="options" id="Smoking" autocomplete="off"> Smoking
+                         <input id="Smoking" type="radio" name="options" autocomplete="off"> Smoking
                      </label>
                   </div>
                 </div>
                 <!--Date and Time-->
                 <div class="form-group row">
-                  <label for="datetime" class="col-3 col-md-2 col-form-label">Date and Time</label>
+                  <label for="datetime" class="col-4 col-md-3 col-form-label">Date and Time</label>
                   <div class="col-4 col-md-4">
                     <input type="" class="form-control" id="date" name="date" placeholder="Date">
                   </div>
@@ -169,19 +142,46 @@
                 </div>
                 <!--Cancel and Reserve buttons-->
                 <div class="form-group row">
-                  <div class="offset-md-2 col-md-10">
-                    <button type="cancel" class="btn btn-secondary"name="button" data-dismiss="modal">Cancel</button>
+                  <div class="offset-md-3 col-md-10">
+                    <button id="hideCancell" type="cancel" class="btn btn-secondary" name="button" >Cancel</button>
                     <button type="submit" class="btn btn-primary">Reserve</button>
                   </div>
                 </div>
               </form>
             </div>
           </div>
-             </div>
+        </div>
       </div>
     </div>
   </div>
 
+  <!--Barra de navegacion -->
+  <nav class="navbar navbar-dark navbar-expand-sm fixed-top">
+    <div class="container">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#Navbar">
+        <!--Barra de navegacion que colapsa en pantallas pequeñas(sm), el data-target="#Navbar" vincula -->
+        <span class="navbar-toggler-icon"></span>
+        <!--Incluir el icono toggl de tres lines tipuco en paginas sm-->
+      </button>
+      <a class="navbar-brand mr-auto" href="./index.html"><img src="img/logo.png" height="30" width="41"></a>
+      <!--mr-auto:margin auto :aumenta la margen derecha para correr el nombre a la derecha -->
+      <div class="collapse navbar-collapse" id="Navbar">
+        <!--correlaciona esta clase y el id con data-toggle="collapse" data-target="#Navbar para que se ejecute dentro del button cuando el displea se sm-->
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active"><a class="nav-link" href="#"><span class="fa fa-home fa-lg"></span> Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="./aboutus.html"><span class="fa fa-info fa-lg"></span> About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#"><span class="fa fa-list fa-lg"></span> Menu</a></li>
+          <li class="nav-item"><a class="nav-link" href="./contactus.html"><span class="fa fa-address-card fa-lg"></span> Contact</a></li>
+        </ul>
+        <!--Link trigger the shoin/hide model-->
+        <span class="navbar-text">
+          <a id="loginModal" href="#">
+            <span class="fa fa-sign-in"></span>Login</a>
+        </span>
+
+      </div>
+    </div>
+  </nav>
   <!--Encabezado- jumbotron -->
   <header class="jumbotron">
     <div class="container ">
@@ -200,11 +200,9 @@
         <!--ReserveButton +Modal - tooltip-->  <!--Task-3-->
         <div class="col-xs-12 col-sm-3 align-self-center">
           <p style="padding:50px;"></p>
-          <a type="button" class="btn btn-warning btn-lg btn-block"
-            data-toggle="modal" data-target="#form"
-            title="Or Call us at <br><strong> +852 12345678</strong>"
-            data-placement="bottom" >Reserve Table</a>
           <!--users access to the form -->
+          <a id="ReserveTable" type="button" class="btn btn-warning btn-lg btn-block"
+            title="Or Call us at  +852 12345678"  >Reserve Table</a>
         </div>
       </div>
     </div>
@@ -410,11 +408,12 @@
   <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
   <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
   <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-  <!---->
+  <!--Carousel-->
   <script>
   $(document).ready(function(){
-    $("#mycarousel").carousel( { interval: 100});
-
+    /*Carousel cycle frecuency*/
+    $("#mycarousel").carousel( { interval: 2000});
+    /**/
     $("#carouselButton").click(function(){
       if ($("#carouselButton").children("span").hasClass('fa-pause')) { /*if the span tag has the fa-pause class when is click  do*/
         $("#mycarousel").carousel('pause'); /*pause the carousel*/
@@ -426,13 +425,40 @@
         $("#carouselButton").children("span").addClass('fa-pause');/*add the class fa-pause(icon) to the span tag */
       }
     });
-  });
-
-
+    });
   </script>
 
+  <!--ReserveTable Modal-->
+  <script>
+  /*modal is triggered when the button is clicked*/
+  $("#ReserveTable").click(function(){
+    $("#reserveForm").modal("show");
+  });
+  /*modal is hide when the x is clicked */
+  $("#hideX").click(function(){
+    $("#reserveForm").modal("hide");
+  });
+  /*modal is hide when the cancel button is clicked*/
+  $("#hideCancell").click(function(){
+    $("#reserveForm").modal("hide");
+  });
+  </script>
 
-
+  <!--Login Modal-->
+  <script>
+  /*Login modal Method*/
+  $('#loginModal').click(function(){
+      $('#loginForm').modal('show');
+  });
+  /*Login modal Method close for the X*/
+  $('#closeLog').click(function(){
+      $('#loginForm').modal('hide');
+  });
+  /*Login modal Method close Cancel*/
+  $('#closeLogcancel').click(function(){
+      $('#loginForm').modal('hide');
+  });
+  </script>
 
 </body>
 
