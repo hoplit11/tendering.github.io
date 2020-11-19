@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags always come first -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!--Garantiza que se priorize diseño responsivo-->
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+  <!-- Bootstrap CSS  include ( css classes from Bootstrap) -->
+
+  <!--build:css css/main.css-->
+  <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.css">
+  <link rel="stylesheet" href="node_modules/bootstrap-social/bootstrap-social.css">
+  <link rel="stylesheet" href="css/styles.css">
+  <!-- endbuild -->
+
+  <title>Tender</title>
+</head>
+
+<body>
+  <!--Modal of Login. Alwasy at the top of the page-->
+<div id="loginForm" class="modal fade" role="dialog" tabindex="">
+    <!--class="modal fade": modal will fade under the screen role="dialogo":display on the top of the page-->
+    <div class="modal-dialog modal-lg" role="content">
+        <!--Modal Content-->
+        <div class="modal-content">
+            <!--Modal header-->
+            <div class="modal-header">
+                <h4 class="modal-title">Login </h4>
+                <button id="closeLog" type="button" class="close">&times;</button>
+                <!--for closing the button-->
+            </div>
+            <!--Modal body-->
+            <div class="modal-body">
+                <form>
+                    <!--Email, password boxes and RememberMe checkbox-->
+                    <div class="form-row">
+                        <!--Email form-->
+                        <div class="form-group col-sm-4">
+                            <label class="sr-only" for="exampleInputEmail3">Email address</label>
+                            <input type="email" class="form-control form-control-sm mr-1" id="exampleInputEmail3"
+                                placeholder="Enter email">
+                        </div>
+                        <!--Password form-->
+                        <div class="form-group col-sm-4">
+                            <label class="sr-only" for="exampleInputPassword3">Password</label>
+                            <input type="password" class="form-control form-control-sm mr-1" id="exampleInputPassword3"
+                                placeholder="Password">
+                        </div>
+                        <!--Remember form-check-->
+                        <div class="col-sm-auto">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox">
+                                <label class="form-check-label"> Remember me</label>
+                            </div>
+                        </div>
+                    </div>
+                    <!--Cancel and Sing in Button-->
+                    <div class="form-row">
+                        <button id="closeLogcancel" type="button"
+                            class="btn btn-secondary btn-sm ml-auto">Cancel</button>
+                        <button type="submit" class="btn btn-primary btn-sm ml-1">Sign in</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!--Reserve a Table Modal- -reservation form-->
+<!--Task - 1 and 2-->
+<div id="reserveForm" class="modal fade" role="dialog" tabindex="">
+    <div class="modal-dialog modal-lg" role="content">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <h4 class="modal-title">Reserve a Table </h4> <!-- heading "Reserve a Table"-->
+                <button id="hideX" type="button" class="close">&times;</button>
+                <!--for closing the button-->
+            </div>
+
+            <div class="modal-body">
+                <div class="card">
+                    <!--Division of the card-->
+                    <div class="card-body">
+                        <form class="" action="index.html" method="post">
+                            <!--Number of Guests-->
+                            <div class="form-group row">
+                                <label for="firstname" class="col-4 col-md-3 col-form-label">Number of Guests</label>
+                                <!--Radios- 1 to 6-->
+                                <div class="col-7 col-md-8">
+                                    <!--1-->
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                            id="inlineRadio1" value="option1">
+                                        <label class="form-check-label" for="inlineRadio1">1</label>
+                                    </div>
+                                    <!--2-->
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                            id="inlineRadio2" value="option2">
+                                        <label class="form-check-label" for="inlineRadio2">2</label>
+                                    </div>
+                                    <!--3-->
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                            id="inlineRadio3" value="option3">
+                                        <label class="form-check-label" for="inlineRadio3">3</label>
+                                    </div>
+                                    <!--4-->
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                            id="inlineRadio4" value="option4">
+                                        <label class="form-check-label" for="inlineRadio4">4</label>
+                                    </div>
+                                    <!--5-->
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                            id="inlineRadio5" value="option5">
+                                        <label class="form-check-label" for="inlineRadio5">5</label>
+                                    </div>
+                                    <!--6-->
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                            id="inlineRadio6" value="option6">
+                                        <label class="form-check-label" for="inlineRadio6">6</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--Section-->
+                            <!--Task 2 -->
+                            <div class="form-group row">
+                                <label for="section" class="col-4 col-md-3 col-form-label">Section</label>
+                                <div class="btn-group btn-group-toggle col-3 col-md-6 " data-toggle="buttons">
+                                    <label class="btn btn-success active">
+                                        <input id="NoSmoking" type="radio" name="options" autocomplete="off" checked>
+                                        Non-Smoking
+                                    </label>
+                                    <!--The non-smoking button is checked by default.-->
+                                    <label class="btn btn-danger">
+                                        <input id="Smoking" type="radio" name="options" autocomplete="off"> Smoking
+                                    </label>
+                                </div>
+                            </div>
+                            <!--Date and Time-->
+                            <div class="form-group row">
+                                <label for="datetime" class="col-4 col-md-3 col-form-label">Date and Time</label>
+                                <div class="col-4 col-md-4">
+                                    <input type="" class="form-control" id="date" name="date" placeholder="Date">
+                                </div>
+                                <div class="col-4 col-md-4">
+                                    <input type="" class="form-control" id="time" name="time" placeholder="Time">
+                                </div>
+                            </div>
+                            <!--Cancel and Reserve buttons-->
+                            <div class="form-group row">
+                                <div class="offset-md-3 col-md-10">
+                                    <button id="hideCancell" type="cancel" class="btn btn-secondary"
+                                        name="button">Cancel</button>
+                                    <button type="submit" class="btn btn-primary">Reserve</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<header>
+
+    <!--Barra de navegacion -->
+    <nav class="navbar navbar-dark navbar-expand-sm ">
+        <div class="container">
+            <!--Barra de navegacion que colapsa en pantallas pequeñas(sm), el data-target="#Navbar" vincula -->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#Navbar">
+                <!--Incluir el icono toggle de tres lines tipico en paginas sm-->
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <a class="navbar-brand mr-auto p-2 " href="./index.html"><img src="img/logo.png" height="30" width="41"></a>
+            <!--mr-auto:margin right auto :aumenta la margen derecha para correr el nombre a la derecha -->
+            <div class="collapse navbar-collapse " id="Navbar">
+                <div class="input-group md-form form-sm form-2 pl-0">
+                    <input class="form-control my-0 py-1 lime-border" type="text" placeholder="Search"
+                        aria-label="Search">
+                    <div class="input-group-append">
+                        <span class="input-group-text lime lighten-2" id="basic-text1"><i
+                                class="fa fa-search text-white" aria-hidden="true"></i></span>
+                    </div>
+                </div>
+                <!--correlaciona esta clase y el id con data-toggle="collapse" data-target="#Navbar para que se ejecute dentro del button cuando el displea se sm-->
+                <ul class="navbar-nav ml-auto  ">
+                    <li class="nav-item active " data-toggle="tooltip" data-placement="top" title="Compare Prices"><a
+                            class="nav-link" href="#"><i class="fa fa-retweet fa-lg" aria-hidden="true"></i></a></li>
+                    <li class="nav-item" data-toggle="tooltip" data-placement="top" title="Wishlist"><a class="nav-link"
+                            href="./aboutus.html"><i class="fa fa-heart-o fa-lg" aria-hidden="true"></i></a></li>
+                    <li class="nav-item" data-toggle="tooltip" data-placement="top" title="My Account"><a
+                            class="nav-link" href="#" id="loginModal"><i class="fa fa-user-o fa-lg"
+                                aria-hidden="true"></i></a></li>
+                    <li class="nav-item" data-toggle="tooltip" data-placement="top" title="Car"><a class="nav-link"
+                            href="./contactus.html"><i class="fa fa-shopping-bag fa-lg" aria-hidden="true"></i></a></li>
+                </ul>
+                <!--Link trigger the shoin/hide model-->
+            </div>
+        </div>
+
+
+
+
+
+
+    </nav>
+    <!---Web page Jumbotron-->
+    <div class="jumbotron mt-70">
+        <div class="d-flex align-items-center h-100">
+            <div class="container text-center py-5">
+                <h3 class="mb-0">Product page</h3>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+<main>
+    <div class="container">
+        <!--Section= block Content UP -->
+        <div class="mb-5">
+            <div class="row" >
+                <!--Caja Producto-->
+                <div class="col-md-6 mb-4 mb-md-0">
+                    <!--carrousel-->
+                    <div></div>
+                    <!--Caja produtos-->
+                    <div class="mdb-lightbox">
+                        <div class="row product-gallery mx-1" >
+                            <div class="col-12 mb-1">
+                                <figure class="view overlay rounded " style="max-height: 500px;">
+                                    <a href="./img/cellphone1.jpg" >
+                                        <img src="./img/cellphone1.jpg" class="img-fluid z-depth-1 center" style="max-width:80%; ">
+                                    </a>
+                                </figure>
+                            </div>
+                            <div class="col-12 mb-0" >
+                                <div class="row">
+                                    <div class="col-3">
+                                        <div class="">
+                                            <img src="./img/cellphone2.jpg" class="img-fluid ">
+                                        </div>
+                                    </div>
+                                    <div class="col-3">
+                                        <div class="">
+                                            <img src="./img/cellphone3.jpg" class="img-fluid">
+                                        </div>
+                                    </div>
+                                    <div class="col-3">
+                                        <div class="">
+                                            <img src="./img/cellphone1.jpg" class="img-fluid">                                        
+                                        </div>
+                                    </div>
+                                    <div class="col-3">
+                                        <div class="">
+                                            <img src="./img/cellphone1.jpg" class="img-fluid">
+                                        </div>
+                                    </div>
+                                </div>   
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--Caja informacion de producto-->
+                <div class="col-md-6">
+                    <h5>AKT Cellphone </h5>
+                    <p class="mb-2 text-muted text-uppercase small">Cellphones</p>
+                    <ul class="row ">
+                        <li class="fa fa-star fa-sm " ></li>
+                        <li class="fa fa-star fa-sm " ></li>
+                        <li class="fa fa-star fa-sm " ></li>
+                        <li class="fa fa-star fa-sm " ></li>
+                        <li class="fa fa-star fa-sm " ></li>
+                    </ul>
+                    <p><span class="mr-1"><strong>$99.99</strong></span></p>
+                    <p class="pt-1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam, sapiente illo. Sit
+                        error voluptas repellat rerum quidem, soluta enim perferendis voluptates laboriosam. Distinctio,
+                        officia quis dolore quos sapiente tempore alias.</p>
+                    <div class="table-responsive">
+                        <table class="table table-sm table-borderless mb-0">
+                            <tbody>
+                                <tr>
+                                    <th class="pl-0 w-25" scope="row"><strong>Model</strong></th>
+                                    <td>AKT 5407X</td>
+                                </tr>
+                                <tr>
+                                    <th class="pl-0 w-25" scope="row"><strong>Color</strong></th>
+                                    <td>Blue</td>
+                                </tr>
+                                <tr>
+                                    <th class="pl-0 w-25" scope="row"><strong>Delivery</strong></th>
+                                    <td>USA, Europe, South Ameruca</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <hr>
+                    <div class="table-responsive mb-2">
+                        <table class="table table-sm table-borderless">
+                            <tbody>
+                                <tr>
+                                    <td class="pl-0 pb-0 w-25">Quantity</td>
+                                    <td class="pb-0">Select size</td>
+                                </tr>
+                                <tr>
+                                    <td class="pl-0">
+                                        <div class="def-number-input number-input safari_only mb-0">
+                                            <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()"
+                                                class="minus"></button>
+                                            <input class="quantity" min="0" name="quantity" value="1" type="number">
+                                            <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()"
+                                                class="plus"></button>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="mt-1">
+                                            <div class="form-check form-check-inline pl-0">
+                                                <input type="radio" class="form-check-input" id="small"
+                                                    name="materialExampleRadios" checked="">
+                                                <label class="form-check-label small text-uppercase card-link-secondary"
+                                                    for="small">Small</label>
+                                            </div>
+                                            <div class="form-check form-check-inline pl-0">
+                                                <input type="radio" class="form-check-input" id="medium"
+                                                    name="materialExampleRadios">
+                                                <label class="form-check-label small text-uppercase card-link-secondary"
+                                                    for="medium">Medium</label>
+                                            </div>
+                                            <div class="form-check form-check-inline pl-0">
+                                                <input type="radio" class="form-check-input" id="large"
+                                                    name="materialExampleRadios">
+                                                <label class="form-check-label small text-uppercase card-link-secondary"
+                                                    for="large">Large</label>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <button type="button" class="btn btn-primary btn-md mr-1 mb-2 waves-effect waves-light">Buy now</button>
+                    <button type="button" class="btn btn-light btn-md mr-1 mb-2 waves-effect waves-light"><i
+                            class="fa fa-shopping-cart pr-2"></i>Add tocart</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+  
+  
+    
+    
+  
+  
+
+
+
+
+  <!--Pie de pagina -->
+  <footer class="footer">
+    <div class="container">
+      <div class="row ">
+        <!--links pagina -->
+        <div class="col-4 offset-1 col-sm-2">
+          <!--col-4:para xsm ocupa 4 col,  offset-1: se movera a la derecha 1 col,  col-sm-2:para sm ocupa 4 col   -->
+          <h5>Links</h5>
+          <ul class="list-unstyled">
+            <!--list-unstyled:Elimina las viñetas de ul -->
+            <li><a href="#">Home</a></li>
+            <li><a href="./aboutus.html">About</a></li>
+            <li><a href="#">Menu</a></li>
+            <li><a href="./contactus.html">Contact</a></li>
+          </ul>
+        </div>
+        <!--links Dirección-->
+        <div class="col-7 col-sm-5">
+          <h5>Our Address</h5>
+          <address>
+            121, Clear Water Bay Road<br>
+            Clear Water Bay, Kowloon<br>
+            HONG KONG<br>
+            <i class="fa fa-phone fa-lg"></i>: +852 1234 5678<br>
+            <i class="fa fa-fax fa-lg"></i>: +852 8765 4321<br>
+            <i class="fa fa-envelope fa-lg"></i>: <a href="mailto:confusion@food.net">confusion@food.net</a>
+          </address>
+        </div>
+        <!--links redes-->
+        <div class="col-12 col-sm-4 align-self-center">
+          <!--col-12: Para xsm ocuparan toda la fila(12columnas) y para tamaños > a sm, ocupara 4 columnas -->
+          <div class="text-center">
+            <!--Centra el los links en la pantalla -->
+            <a class="btn btn-social-icon btn-google" href="http://google.com/+"><i
+                class="fa fa-google-plus fa-lg"></i></a>
+            <a class="btn btn-social-icon btn-facebook" href="http://www.facebook.com/profile.php?id="><i
+                class="fa fa-facebook fa-lg"></i></a>
+            <a class="btn btn-social-icon btn-linkedin" href="http://www.linkedin.com/in/"><i
+                class="fa fa-linkedin fa-lg"></i></a>
+            <a class="btn btn-social-icon btn-twitter" href="http://twitter.com/"><i
+                class="fa fa-twitter fa-lg"></i></a>
+            <a class="btn btn-social-icon btn-google" href="http://youtube.com/"><i class="fa fa-youtube fa-lg"></i></a>
+            <a class="btn btn-social-icon " href="mailto:"><i class="fa fa-envelope-o fa-lg" aria-hidden="true"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <!--Copyright justify-content-center-->
+      <div class="row justify-content-center">
+        <!-- row: clase para bootstrap, justify-content-center: justfica(posiciona la columba en centro) el contenido en el centro de la fila -->
+        <div class="col-auto">
+          <!-- col-auto: Ocupara las col necesaria deacuerdo al contenido -->
+          <p>© Copyright 2018 Ristorante Con Fusion</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- jQuery first, then Popper.js, then Bootstrap JS. -->
+  <!--build:css js/main.css-->
+  <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
+  <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
+  <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script src="js/scripts.js"></script>
+  <!-- endbuild -->
+
+</body>
+
+</html>
