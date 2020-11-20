@@ -63,5 +63,13 @@
     "install": "^0.13.0",
     "jquery": "^3.5.1",
     "popper.js": "^1.12.9"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hoplit11/tendering.github.io.git"
+  },
+  "bugs": {
+    "url": "https://github.com/hoplit11/tendering.github.io/issues"
+  },
+  "homepage": "https://github.com/hoplit11/tendering.github.io#readme"
 }
